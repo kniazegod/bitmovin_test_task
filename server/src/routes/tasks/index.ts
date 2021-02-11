@@ -7,7 +7,7 @@ const router = Router();
 router.get('/', async (_, res) => {
   const tasks = await task_service.get_all_tasks();
 
-  res.json(tasks)
+  res.json(tasks);
 });
 
 router.post('/new', async (req, res) => {
@@ -23,7 +23,7 @@ router.post('/:task_id/update', async (req, res) => {
 });
 
 router.post('/:task_id/delete', async (req, res) => {
-  const task = await task_service.delete_task(req.params.task_id);
+  await task_service.delete_task(req.params.task_id);
 
   res.json({ ok: true });
 });

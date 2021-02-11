@@ -20,4 +20,4 @@ export default {
     const updated_task = await Task.query().updateAndFetchById(id, task_data);
     return updated_task;
   },
-}
+};
