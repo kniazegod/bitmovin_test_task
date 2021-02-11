@@ -17,7 +17,10 @@ router.post('/new', async (req, res) => {
 });
 
 router.post('/:task_id/update', async (req, res) => {
-  const task = await task_service.update_task(req.params.task_id, req.body.task);
+  const task = await task_service.update_task(
+    req.params.task_id,
+    req.body.task
+  );
   if (!task) {
     res.status(404).json({
       error: {
@@ -31,6 +34,13 @@ router.post('/:task_id/update', async (req, res) => {
 
 router.post('/:task_id/delete', async (req, res) => {
   const result = await task_service.delete_task(req.params.task_id);
+  if (!result) {
+    res.status(500).json({
+      error: {
+        message: 'Can\'t delete enitity.',
+      },
+    });
+  }
 
   res.json({ ok: result });
 });

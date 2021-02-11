@@ -3,23 +3,27 @@
 Simple Todo list application. Express.js + Vue.js.
 
 ## Pre-requriments
+
 Postgresql
 
 ## Installation
+
 ```
 npm i && cd server && npm i && cd ../front && npm i && cd ../
-cd server 
+cd server
 npm run migrate
 
 ```
 
-## Run backend 
+## Run backend
+
 ```
 cd server
 npm run start
 ```
 
-## Run frontend 
+## Run frontend
+
 ```
 cd front
 npm run serve

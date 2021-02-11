@@ -1,20 +1,25 @@
 <template>
-<div>
-  <h1>Todo List</h1>
-  <div class="wrapper">
-    <div class="todo-list">
-      <div class="task" v-for="task in tasks" :key="task.id">
-        <input class="task-checkbox" type="checkbox" v-model="task.done" @change="update_status(task)" />
-        <span> {{ task.name }} </span>
-        <button class="remove-button" @click="remove(task)">X</button>
-      </div>
-      <div>
-        <input class="name-input" ref="task_name" type="text" />
-        <button class="add-button" @click="add()">Add</button>
+  <div>
+    <h1>Todo List</h1>
+    <div class="wrapper">
+      <div class="todo-list">
+        <div class="task" v-for="task in tasks" :key="task.id">
+          <input
+            class="task-checkbox"
+            type="checkbox"
+            v-model="task.done"
+            @change="update_status(task)"
+          />
+          <span> {{ task.name }} </span>
+          <button class="remove-button" @click="remove(task)">X</button>
+        </div>
+        <div>
+          <input class="name-input" ref="task_name" type="text" />
+          <button class="add-button" @click="add()">Add</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -22,16 +27,16 @@ import client from 'client-library';
 
 export default {
   name: 'TodoList',
-  data: function() {
+  data: function () {
     return {
-      tasks: []
-    }
+      tasks: [],
+    };
   },
-  created: async function() {
+  created: async function () {
     this.tasks = await client.get_all_tasks();
   },
   methods: {
-    add: async function() {
+    add: async function () {
       const task = await client.create_task(this.$refs.task_name.value || '');
       this.tasks.push(task);
       this.$refs.task_name.value = '';
@@ -39,17 +44,16 @@ export default {
     update_status: async function (task) {
       await client.update_task(task.id, { done: task.done });
     },
-    remove: async function(task) {
+    remove: async function (task) {
       const response = await client.delete_task(task.id);
-      console.log(response)
+      console.log(response);
       if (response.ok) {
         const idx = this.tasks.indexOf(task);
         this.tasks.splice(idx, 1);
       }
-
-    }
-  }
-} 
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -85,5 +89,4 @@ export default {
   font-weight: 600;
   margin-left: auto;
 }
-
 </style>

@@ -26,7 +26,9 @@ describe('Task service', () => {
   });
   test('Should update done status', async () => {
     const task = await Task.query().insert({ name: 'another_testing_task' });
-    const updated_task = await tasks_service.update_task(task.id!, { done: true });
+    const updated_task = await tasks_service.update_task(task.id!, {
+      done: true,
+    });
     expect(updated_task).toBeDefined();
     expect(updated_task?.done).toBe(true);
     await Task.query().where({ id: task.id }).delete();

@@ -1,8 +1,8 @@
 import { Model } from 'objection';
 
 export interface ITask {
-  id: string
-  name: string
+  id: string;
+  name: string;
   done: boolean;
   user: string;
 }
@@ -10,7 +10,7 @@ export interface ITask {
 interface Task extends Partial<ITask> {}
 
 class Task extends Model {
-  static tableName = 'task'
+  static tableName = 'task';
 }
 
 export default Task;

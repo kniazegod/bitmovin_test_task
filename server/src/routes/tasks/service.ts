@@ -8,7 +8,10 @@ export default {
   },
 
   async delete_task(id: string): Promise<boolean> {
-    return !!Task.query().where({ id }).delete().catch(() => false);
+    return !!Task.query()
+      .where({ id })
+      .delete()
+      .catch(() => false);
   },
 
   async create_task(task: Pick<ITask, 'name'>): Promise<Partial<ITask> | null> {
@@ -16,7 +19,10 @@ export default {
     return new_task;
   },
 
-  async update_task(id: string, task_data: Partial<ITask>): Promise<Partial<ITask> | null> {
+  async update_task(
+    id: string,
+    task_data: Partial<ITask>
+  ): Promise<Partial<ITask> | null> {
     const task = await Task.query().select().where({ id }).first();
     if (!task) {
       return null;

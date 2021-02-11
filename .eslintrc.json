@@ -27,8 +27,10 @@
         "jest/no-identical-title": "error",
         "jest/prefer-to-have-length": "warn",
         "jest/valid-expect": "error",
-        "@typescript-eslint/no-non-null-assertion": 0,
+        "comma-dangle": 0,
+        "@typescript-eslint/no-empty-interface": 0,
         "import/prefer-default-export": 0,
-        "@typescript-eslint/no-empty-interface": 0
+        "@typescript-eslint/no-non-null-assertion": 0,
+        "@typescript-eslint/explicit-module-boundary-types": 0
     }
 }

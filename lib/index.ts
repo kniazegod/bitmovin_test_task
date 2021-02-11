@@ -8,18 +8,22 @@ export default {
     return response.data;
   },
 
-  async delete_task(id: string) {
+  async delete_task(id) {
     const response = await axios.post(`${base_url}/tasks/${id}/delete`);
     return response.data;
   },
 
   async create_task(name) {
-    const response = await axios.post(`${base_url}/tasks/new`, { task: { name } });
+    const response = await axios.post(`${base_url}/tasks/new`, {
+      task: { name },
+    });
     return response.data;
   },
 
   async update_task(id, data) {
-    const response = await axios.post(`${base_url}/tasks/${id}/update`, { task: data });
+    const response = await axios.post(`${base_url}/tasks/${id}/update`, {
+      task: data,
+    });
     return response.data;
   },
 };
