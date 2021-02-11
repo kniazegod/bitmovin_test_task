@@ -2,7 +2,7 @@ import Task, { ITask } from '../../models/task';
 
 export default {
   async get_all_tasks() {
-    const tasks = await Task.query().select();
+    const tasks = await Task.query().select().orderBy('created_at', 'ASC');
 
     return tasks;
   },
