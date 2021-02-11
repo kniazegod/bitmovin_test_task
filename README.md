@@ -11,12 +11,10 @@ npm i && cd server && npm i && cd ../front && npm i
 ```
 cd server
 npm run start
-
 ```
 
 ## Run frontend 
 ```
 cd front
 npm run serve
-
 ```
