@@ -1,7 +1,7 @@
 import { Model } from 'objection';
-import Task from '../server/src/models/task';
-import tasks_service from '../server/src/routes/tasks/service';
-import knex from '../server/src/knex';
+import Task from '../src/models/task';
+import tasks_service from '../src/routes/tasks/service';
+import knex from '../src/knex';
 
 Model.knex(knex);
 

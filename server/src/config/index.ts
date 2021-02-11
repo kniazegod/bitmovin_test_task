@@ -1,6 +1,6 @@
 import * as app from './app';
 
-const knex = require('../../../knexfile');
+const knex = require('../../knexfile');
 
 export default {
   app,
