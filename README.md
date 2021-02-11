@@ -1,4 +1,4 @@
-### Bitmovin test task
+# Bitmovin test task
 
 Simple Todo list application. Express.js + Vue.js.
 
