@@ -8,7 +8,7 @@ export default {
   },
 
   async delete_task(id: string) {
-    return await Task.query().where({ id }).delete();
+    return Task.query().where({ id }).delete();
   },
 
   async create_task(task: Pick<ITask, 'name'>) {
@@ -19,5 +19,5 @@ export default {
   async update_task(id: string, task_data: Partial<ITask>) {
     const updated_task = await Task.query().updateAndFetchById(id, task_data);
     return updated_task;
-  }
+  },
 }

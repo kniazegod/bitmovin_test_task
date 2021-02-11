@@ -36,12 +36,14 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.17",
     "objection": "^2.2.14",
     "pg": "^8.5.1",
     "rimraf": "^3.0.2",
-    "uuidv4": "^6.2.6"
+    "uuidv4": "^6.2.6",
+    "vue": "^2.6.12"
   }
 }
