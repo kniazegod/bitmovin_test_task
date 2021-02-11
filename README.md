@@ -6,11 +6,15 @@ Simple Todo list application. Express.js + Vue.js.
 
 Postgresql
 
-## Installation
+## Project setup
 
 ```
 npm i && cd server && npm i && cd ../front && npm i && cd ../
 cd server
+```
+
+## Migrations
+```
 npm run migrate
 
 ```
