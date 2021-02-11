@@ -16,7 +16,6 @@ cd server
 ## Migrations
 ```
 npm run migrate
-
 ```
 
 ## Run backend
