@@ -10,7 +10,8 @@
     "test": "jest",
     "start:back": "ts-node-script ./server/src/index.ts",
     "migrate": "knex migrate:latest",
-    "rollback": "knex migrate:rollback"
+    "rollback": "knex migrate:rollback",
+    "lint": "eslint ./server ./front"
   },
   "repository": {
     "type": "git",
