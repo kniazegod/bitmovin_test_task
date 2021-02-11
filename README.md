@@ -3,7 +3,9 @@
 Simple Todo list application. Express.js + Vue.js.
 
 ## Installation
+```
 npm i && cd server && npm i && cd ../front && npm i
+```
 
 ## Run backend 
 ```
