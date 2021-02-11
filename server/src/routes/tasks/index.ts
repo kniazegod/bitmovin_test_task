@@ -16,8 +16,8 @@ router.post('/new', async (req, res) => {
   res.json(task);
 });
 
-router.post('/update', async (req, res) => {
-  const task = await task_service.update_task(req.body.task);
+router.post('/:task_id/update', async (req, res) => {
+  const task = await task_service.update_task(req.params.task_id, req.body.task);
 
   res.json(task);
 });

@@ -16,8 +16,8 @@ export default {
     return new_task;
   },
 
-  async update_task(task: Partial<ITask>) {
-    const updated_task = await Task.query().updateAndFetchById(task.id!, task);
+  async update_task(id: string, task_data: Partial<ITask>) {
+    const updated_task = await Task.query().updateAndFetchById(id, task_data);
     return updated_task;
   }
 }

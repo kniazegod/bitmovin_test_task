@@ -1,0 +1,11 @@
+{
+  "name": "client-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "axios": "^0.21.1"
+  }
+}
