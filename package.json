@@ -7,7 +7,6 @@
     "./lib"
   ],
   "scripts": {
-    "test": "jest",
     "lint": "eslint ./server ./front"
   },
   "repository": {
@@ -19,5 +18,19 @@
   "bugs": {
     "url": "https://github.com/kniazegod/bitmovin_test_task/issues"
   },
-  "homepage": "https://github.com/kniazegod/bitmovin_test_task#readme"
+  "homepage": "https://github.com/kniazegod/bitmovin_test_task#readme",
+  "dependencies": {
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb": "^18.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3"
+  }
 }

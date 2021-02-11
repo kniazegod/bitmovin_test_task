@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
 
 dotenv.config();
-import './server'
+// eslint-disable-next-line import/first
+import './server';

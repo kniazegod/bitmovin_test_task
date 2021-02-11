@@ -8,9 +8,10 @@ Model.knex(knex);
 describe('Task service', () => {
   test('Should add a task', async () => {
     const task = await tasks_service.create_task({ name: 'testing_task' });
-    expect(task.name).toBe('testing_task');
-    expect(task.id).toBeDefined();
-    await Task.query().where({ id: task.id }).delete();
+    expect(task).toBeDefined();
+    expect(task!.name).toBe('testing_task');
+    expect(task!.id).toBeDefined();
+    await Task.query().where({ id: task!.id }).delete();
   });
   test('Should remove a task', async () => {
     const task = await Task.query().insert({ name: 'another_testing_task' });
@@ -26,7 +27,8 @@ describe('Task service', () => {
   test('Should update done status', async () => {
     const task = await Task.query().insert({ name: 'another_testing_task' });
     const updated_task = await tasks_service.update_task(task.id!, { done: true });
-    expect(updated_task.done).toBe(true);
+    expect(updated_task).toBeDefined();
+    expect(updated_task?.done).toBe(true);
     await Task.query().where({ id: task.id }).delete();
   });
 });

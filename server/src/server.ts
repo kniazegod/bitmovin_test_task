@@ -14,6 +14,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+
 app.use('/rest/v1/', routes);
 app.get('/ping', (_, res) => res.json('pong'));
 

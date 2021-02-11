@@ -18,14 +18,21 @@ router.post('/new', async (req, res) => {
 
 router.post('/:task_id/update', async (req, res) => {
   const task = await task_service.update_task(req.params.task_id, req.body.task);
+  if (!task) {
+    res.status(404).json({
+      error: {
+        message: 'Update non-existing entity',
+      },
+    });
+  }
 
   res.json(task);
 });
 
 router.post('/:task_id/delete', async (req, res) => {
-  await task_service.delete_task(req.params.task_id);
+  const result = await task_service.delete_task(req.params.task_id);
 
-  res.json({ ok: true });
+  res.json({ ok: result });
 });
 
 export default router;

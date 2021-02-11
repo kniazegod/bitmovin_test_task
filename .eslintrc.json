@@ -4,7 +4,9 @@
         "jest/globals": true
     },
     "extends": [
-        "airbnb-base"
+        "airbnb-base",
+        "@vue/typescript",
+        "@vue/typescript/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -24,6 +26,9 @@
         "jest/no-focused-tests": "error",
         "jest/no-identical-title": "error",
         "jest/prefer-to-have-length": "warn",
-        "jest/valid-expect": "error"
+        "jest/valid-expect": "error",
+        "@typescript-eslint/no-non-null-assertion": 0,
+        "import/prefer-default-export": 0,
+        "@typescript-eslint/no-empty-interface": 0
     }
 }

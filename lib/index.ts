@@ -8,7 +8,7 @@ export default {
     return response.data;
   },
 
-  async delete_task(id) {
+  async delete_task(id: string) {
     const response = await axios.post(`${base_url}/tasks/${id}/delete`);
     return response.data;
   },
